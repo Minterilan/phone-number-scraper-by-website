@@ -153,9 +153,34 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             1. Upload CSV File
           </h2>
-          <p className="text-gray-600 mb-4">
-            Your CSV should have a column named &quot;Websites&quot; with company URLs
-          </p>
+
+          {/* CSV Requirements */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+              <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              CSV File Requirements
+            </h3>
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li className="flex items-start gap-2">
+                <span className="text-green-500 font-bold mt-0.5">✓</span>
+                <span><strong>Required column:</strong> Must have a column named <code className="bg-white px-2 py-0.5 rounded text-blue-600 font-mono">Websites</code> (with capital W)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-500 font-bold mt-0.5">✓</span>
+                <span><strong>Supported formats:</strong> example.com, https://example.com, www.example.com</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-500 font-bold mt-0.5">✓</span>
+                <span><strong>Other columns:</strong> Any additional columns (Score, Name, etc.) will be preserved in the output</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-500 font-bold mt-0.5">→</span>
+                <span><strong>Example:</strong> Websites,Score,Name<br/>example.com,98,Company A</span>
+              </li>
+            </ul>
+          </div>
 
           <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-500 transition-colors">
             <input
